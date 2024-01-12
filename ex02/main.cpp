@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:04:27 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/11 17:16:33 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/12 15:57:28 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int main()
 {
     Bureaucrat br1("Silvio", 50);
     Bureaucrat br2("Ascano", 1);
 
-    Form form("tasse", 40, 30);
+    AForm form("tasse", 40, 30);
 
     std::cout << "before signing:\n" << form << "\n\n";
     

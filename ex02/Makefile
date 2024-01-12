@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+         #
+#    By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 13:50:09 by gcavanna          #+#    #+#              #
-#    Updated: 2024/01/11 17:17:25 by gcavanna         ###   ########.fr        #
+#    Updated: 2024/01/12 15:56:54 by gcavanna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Br01
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf

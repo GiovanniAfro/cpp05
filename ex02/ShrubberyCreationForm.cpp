@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 13:33:57 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/13 14:21:34 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/13 18:41:02 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 147, 137), _target("ShrubberyCreationForm") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Shrubbery Creation", 145, 137), _target(_target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Shrubbery Creation", 145, 137), _target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm(other) {}
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
+ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other)
 {
-    if (this != other)
-        AForm::operator=(other)
+    if (this != &other)
+    {
+        _target = other._target;
+    }
     return *this;
 }
+
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
@@ -32,16 +35,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
-    if(!getSigned())
-    {
-        std::cout << "Warning: ShrubberyCreationForm is not signed. Cannot execute." << std::endl;
-        return;
-    }
+    AForm::execute(executor);
 
-    if (executor.getGrade() > getGradeToExecute()) 
-        throw GradeTooLowException();
-
-    std::ofstream outfile(_tearget + "_shrubbery");
+    std::ofstream outfile((_target + "_shrubbery").c_str());
     if (outfile.is_open())
     {
         outfile << "    *\n";

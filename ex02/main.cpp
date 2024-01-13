@@ -6,32 +6,47 @@
 /*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:04:27 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/12 15:57:28 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/13 18:22:10 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-    Bureaucrat br1("Silvio", 50);
-    Bureaucrat br2("Ascano", 1);
+    // Creazione di un Bureaucrat
+    Bureaucrat bureaucrat("Silvio", 50);
 
-    AForm form("tasse", 40, 30);
+    // Creazione di alcune forme
+    ShrubberyCreationForm shrubberyForm("Garden");
+    RobotomyRequestForm robotomyForm("Target");
+    PresidentialPardonForm pardonForm("Person");
 
-    std::cout << "before signing:\n" << form << "\n\n";
-    
+    // Firma delle forme
     try
     {
-        //form.beSigned(br1);
-        form.beSigned(br2);
-
-        std::cout << "After signing:\n" << form << "\n";
+        shrubberyForm.beSigned(bureaucrat);
+        robotomyForm.beSigned(bureaucrat);
+        pardonForm.beSigned(bureaucrat);
     }
-
     catch (const std::exception &e)
     {
-        std::cerr << "Exeption caught in main: " << e.what() << std::endl;
+        std::cerr << "Exception caught during signing: " << e.what() << std::endl;
+    }
+
+    // Tentativo di esecuzione delle forme
+    try
+    {
+        bureaucrat.executeForm(shrubberyForm);
+        bureaucrat.executeForm(robotomyForm);
+        bureaucrat.executeForm(pardonForm);
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Exception caught during form execution: " << e.what() << std::endl;
     }
 
     return 0;

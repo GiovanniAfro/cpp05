@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 16:04:35 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/13 18:42:35 by gcavanna         ###   ########.fr       */
+/*   Created: 2024/01/13 17:51:27 by gcavanna          #+#    #+#             */
+/*   Updated: 2024/01/13 18:27:02 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 #include "AForm.hpp"
-#include <fstream>
+#include <iostream>
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	private:
 		const std::string _target;
 
 	public:
-		ShrubberyCreationForm();
-		ShrubberyCreationForm(const std::string &target);
-		ShrubberyCreationForm(const ShrubberyCreationForm& other);
-    	~ShrubberyCreationForm();
+		PresidentialPardonForm();
+		PresidentialPardonForm(const std::string &target);
+		PresidentialPardonForm(const PresidentialPardonForm &other);
+		virtual ~PresidentialPardonForm();
 
-		ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
+		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
 
 		void execute(const Bureaucrat &executor) const;
 };

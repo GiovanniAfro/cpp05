@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:57:37 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/12 14:34:42 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/13 18:19:57 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ class AForm
         {
             public:
                 virtual const char* what() const throw();
+        };
+
+        class FormNotSignedException : public std::exception
+        {
+            public:
+                virtual const char *what() const throw();
         };
 
         AForm();

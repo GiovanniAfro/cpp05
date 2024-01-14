@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:01:11 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/13 18:38:49 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/14 20:11:15 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,10 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 void PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
     if (!getSigned())
-    {
-        std::cout << "Warning: Presidential Pardon Form is not signed. Cannot execute." << std::endl;
-        return;
-    }
+        throw AForm::GradeTooLowException();
 
     if (executor.getGrade() > getGradeToExecute())
-        throw GradeTooLowExeption();
+        throw AForm::GradeTooLowException();
 
     std::cout << "Zaphod Beeblebrox has pardoned " << _target << "." << std::endl;
 }

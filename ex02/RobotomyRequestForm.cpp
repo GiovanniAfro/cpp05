@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:31:54 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/13 17:42:38 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/14 20:10:31 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,11 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
-	if(!getSigned())
-	{
-		std::cout<< "Warning: RobotomyREquest is not signed. Cannot execute." << std::endl;
-		return;
-	}
+    if (!getSigned())
+        throw AForm::GradeTooLowException();
 
-	if (executor.getGrade() > getGradeToExecute())
-		throw GradeTooLowExeption();
+    if (executor.getGrade() > getGradeToExecute())
+        throw AForm::GradeTooLowException();
 
 	std::cout << "* Drilling noises * ";
     if (rand() % 2 == 0)

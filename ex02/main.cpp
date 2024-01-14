@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:04:27 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/13 18:22:10 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/14 20:19:29 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,29 @@
 
 int main()
 {
-    // Creazione di un Bureaucrat
-    Bureaucrat bureaucrat("Silvio", 50);
-
-    // Creazione di alcune forme
-    ShrubberyCreationForm shrubberyForm("Garden");
-    RobotomyRequestForm robotomyForm("Target");
-    PresidentialPardonForm pardonForm("Person");
-
-    // Firma delle forme
     try
     {
-        shrubberyForm.beSigned(bureaucrat);
-        robotomyForm.beSigned(bureaucrat);
-        pardonForm.beSigned(bureaucrat);
+        Bureaucrat br("SILVIO", 50);
+        ShrubberyCreationForm sh("Garden");
+        RobotomyRequestForm ro("Alice");
+        PresidentialPardonForm pa("Italia");
+
+        std::cout << br << std::endl;
+        std::cout << sh << std::endl;
+        std::cout << ro << std::endl;
+        std::cout << pa << std::endl;
+
+        br.signForm(sh);
+        br.signForm(ro);
+        br.signForm(pa);
+
+        br.executeForm(sh);
+        br.executeForm(ro);
+        br.executeForm(pa);
     }
     catch (const std::exception &e)
     {
-        std::cerr << "Exception caught during signing: " << e.what() << std::endl;
-    }
-
-    // Tentativo di esecuzione delle forme
-    try
-    {
-        bureaucrat.executeForm(shrubberyForm);
-        bureaucrat.executeForm(robotomyForm);
-        bureaucrat.executeForm(pardonForm);
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << "Exception caught during form execution: " << e.what() << std::endl;
+        std::cerr << "Exception caught in main: " << e.what() << std::endl;
     }
 
     return 0;

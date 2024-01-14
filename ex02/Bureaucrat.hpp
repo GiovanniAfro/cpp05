@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:51:42 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/14 19:34:26 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/14 20:13:56 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ class Bureaucrat
 
         void incGrade();
         void decGrade();
+        void signForm(AForm &form);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);

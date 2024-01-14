@@ -6,13 +6,13 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 13:33:57 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/14 19:24:25 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/14 20:09:30 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 147, 137), _target("ShrubberyCreationForm") {}
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation Form", 145, 137), _target("ShrubberyCreationForm") {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Shrubbery Creation", 145, 137), _target(target) {}
 
@@ -22,7 +22,6 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 {
     if (this != &other)
     {
-        // Copia gli attributi necessari, ad esempio _target
         _target = other._target;
     }
     return *this;
@@ -35,7 +34,11 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
-    AForm::execute(executor);
+    if (!getSigned())
+        throw AForm::GradeTooLowException();
+
+    if (executor.getGrade() > getGradeToExecute())
+        throw AForm::GradeTooLowException();
 
     std::ofstream outfile((_target + "_shrubbery").c_str());
     if (outfile.is_open())

@@ -6,11 +6,12 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:21:34 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/10 16:30:38 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/14 19:36:35 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() {}
 
@@ -87,6 +88,19 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat)
 {
     os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
     return os;
+}
+
+void Bureaucrat::executeForm(const AForm &form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << getName() << " executes " << form.getName() << std::endl;
+    } 
+    catch (const std::exception &e)
+    {
+        std::cout << getName() << " cannot execute " << form.getName() << " because: " << e.what() << std::endl;
+    }
 }
 
 

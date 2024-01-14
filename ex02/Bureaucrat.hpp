@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:51:42 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/13 18:25:44 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/14 19:34:26 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class Bureaucrat
 		
 		Bureaucrat& operator=(const Bureaucrat& other);
 
-        void    executeForm(const AForm &form);
+        void    executeForm(const AForm &form) const;
         const std::string& getName() const;
         int getGrade() const;
 

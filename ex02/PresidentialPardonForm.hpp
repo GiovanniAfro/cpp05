@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:51:27 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/13 18:27:02 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/14 19:29:47 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class PresidentialPardonForm : public AForm
 {
 	private:
-		const std::string _target;
+		std::string _target;
 
 	public:
 		PresidentialPardonForm();

@@ -6,12 +6,9 @@
 /*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:04:27 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/15 17:17:51 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:19:03 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <iostream>
-#include "Intern.hpp"
 
 #include <iostream>
 #include "Intern.hpp"

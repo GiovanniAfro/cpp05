@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:04:27 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/15 16:58:21 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/15 17:17:51 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int main()
     {
         AForm *rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
-        Bureaucrat br("NOTSilvio", 100);
+        Bureaucrat br("NOTSilvio", 50);
+        br.signForm(*rrf);
         br.executeForm(*rrf);
         delete rrf;
     }

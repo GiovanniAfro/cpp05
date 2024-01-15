@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 13:33:57 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/14 20:09:30 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/15 17:15:51 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation Form", 145, 137), _target("ShrubberyCreationForm") {}
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation Form", 147, 137), _target("ShrubberyCreationForm") {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Shrubbery Creation", 145, 137), _target(target) {}
 
@@ -38,7 +38,9 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
         throw AForm::GradeTooLowException();
 
     if (executor.getGrade() > getGradeToExecute())
+    {
         throw AForm::GradeTooLowException();
+    }
 
     std::ofstream outfile((_target + "_shrubbery").c_str());
     if (outfile.is_open())

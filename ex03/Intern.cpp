@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 13:00:27 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/15 15:18:52 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/15 16:57:32 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
         createFormFunction creator;
     };
 
-    FormInfo forms[] = {
+    FormInfo forms[] = 
+    {
         {"presidential pardon", &Intern::createPresidentialPardon},
         {"robotomy request", &Intern::createRobotomyRequest},
         {"shrubbery creation", &Intern::createShrubberyCreation}

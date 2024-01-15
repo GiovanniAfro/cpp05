@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:04:27 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/15 15:22:39 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/15 16:58:21 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int main()
     {
         AForm *rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
-        Bureaucrat lowGradeBureaucrat("LowGradeGuy", 100);
-        lowGradeBureaucrat.executeForm(*rrf);
+        Bureaucrat br("NOTSilvio", 100);
+        br.executeForm(*rrf);
         delete rrf;
     }
     catch (std::exception &e)

@@ -6,41 +6,33 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:04:27 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/14 20:19:29 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:22:39 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include <iostream>
+#include "Intern.hpp"
+
+#include <iostream>
+#include "Intern.hpp"
 
 int main()
 {
+    Intern someRandomIntern;
+
     try
     {
-        Bureaucrat br("SILVIO", 50);
-        ShrubberyCreationForm sh("Garden");
-        RobotomyRequestForm ro("Alice");
-        PresidentialPardonForm pa("Italia");
+        AForm *rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
-        std::cout << br << std::endl;
-        std::cout << sh << std::endl;
-        std::cout << ro << std::endl;
-        std::cout << pa << std::endl;
-
-        br.signForm(sh);
-        br.signForm(ro);
-        br.signForm(pa);
-
-        br.executeForm(sh);
-        br.executeForm(ro);
-        br.executeForm(pa);
+        Bureaucrat lowGradeBureaucrat("LowGradeGuy", 100);
+        lowGradeBureaucrat.executeForm(*rrf);
+        delete rrf;
     }
-    catch (const std::exception &e)
+    catch (std::exception &e)
     {
-        std::cerr << "Exception caught in main: " << e.what() << std::endl;
+        std::cerr << "Exception caught: " << e.what() << std::endl;
     }
 
     return 0;
 }
+

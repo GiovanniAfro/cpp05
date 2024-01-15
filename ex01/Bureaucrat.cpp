@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:21:34 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/10 16:30:38 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:48:49 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() {}
 
@@ -89,5 +90,16 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat)
     return os;
 }
 
-
+void Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << *this << " signs " << form << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Exception caught in signForm: " << e.what() << std::endl;
+    }
+}
 

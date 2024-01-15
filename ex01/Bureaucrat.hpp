@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:51:42 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/10 16:30:45 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:41:01 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <string>
+
+class Form;
 
 class Bureaucrat
 {
@@ -49,6 +51,7 @@ class Bureaucrat
 
         void incGrade();
         void decGrade();
+        void signForm(Form &form);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);

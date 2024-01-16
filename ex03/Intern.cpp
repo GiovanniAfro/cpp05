@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 13:00:27 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/15 16:57:32 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/16 11:49:18 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,18 @@
 
 Intern::Intern() {}
 
+Intern::Intern(const Intern &other)
+{
+    *this = other;
+}
+
 Intern::~Intern() {}
+
+Intern& Intern::operator=(const Intern &other)
+{
+    (void)other;
+    return *this;
+}
 
 AForm *Intern::makeForm(const std::string &formName, const std::string &target)
 {

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 13:00:05 by gcavanna          #+#    #+#             */
-/*   Updated: 2024/01/15 18:15:40 by gcavanna         ###   ########.fr       */
+/*   Updated: 2024/01/16 11:49:29 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Intern
 {
 public:
     Intern();
-    Intern(const std::string &target);
+    Intern(const Intern &other);
     ~Intern();
 
     Intern  &operator=(const Intern &other);
